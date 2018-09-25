@@ -221,7 +221,8 @@
 				if(e && e.keyCode == 13) {
 					var recipient = $('.chat-active').attr('data-n');
 					var val = $('.chat-active .input').val();
-					
+					const currentTime = moment().format('A HH:mm');			
+
 					console.log(val);
 					if(val == '') return;
 					sendMessage(val);
@@ -230,7 +231,8 @@
 						'addresser':name,
 						'recipient':recipient,
 						'type':'plain',
-						'body':val
+						'body':val,
+						'time':currentTime
 					}
 					socket.emit('send private message', req);
 					$('.chat-active .input').val('');

@@ -40,6 +40,9 @@ server 再發 'receive private message' 事件給 client
 
 
 <h3>細部包括</h3>
+Mongodb local 
+Mongolab cloud
+heroku 部屬
 訊息通知
 已讀訊息
 取得時間

@@ -1,5 +1,0 @@
-collection.find({firstName:"Bill"}).toArray(function(err,items){
-            if(err) throw err;
-            console.log(items);
-            console.log("We found "+items.length+" results!");
-        });

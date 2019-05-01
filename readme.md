@@ -48,7 +48,7 @@ server 再發 'receive private message' 事件給 client
 
 
 #### 細部包括  
-Mongodb local  
+Mongodb local => [基本環境建設](https://github.com/LinX9581/Note/tree/master/Database/Mongodb)  
 Mongolab cloud  
 heroku 部屬  
 訊息通知  

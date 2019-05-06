@@ -9,8 +9,9 @@ var MONGODB_URI = 'mongodb://admin:[your mlab password]@ds249311.mlab.com:49311/
 
 app.use(express.static('public'));
 
+
 app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/linx.html');
+    res.sendFile(__dirname + '/chat.html');
 });
 
 //一對多
@@ -24,14 +25,12 @@ app.get('/all/', function(req, res) {
 var usocket = {},
     user = [];
 
-
 io.on('connection', (socket) => { //(socket)=>  等於 function(socket){}
     //username=客戶端傳來用戶輸入的name
     socket.on('new user', (username) => {
         if (!(username in usocket)) { //username指向usocket
             socket.username = username; //給予每個username一個socket
             usocket[username] = socket;
-            //console.log(socket);
             user.push(username); //在陣列尾新增元素 ，並返回新的長度
             socket.emit('login', user);
             socket.broadcast.emit('user joined', username, (user.length - 1));
@@ -40,19 +39,9 @@ io.on('connection', (socket) => { //(socket)=>  等於 function(socket){}
         }
     })
 
-    /*
-    res	=	var req = {
-    			'addresser':name,
-    			'recipient':recipient,
-    			'type':'plain',
-    			'body':val
-    		}
-    */
-
     //私人
     socket.on('send private message', function(res) {
-        console.log(res);
-
+        console.log(res); //可看chat.html res格式
         //msg to db
         MongoClient.connect(MONGODB_URI, function(err, db) {
             if (err) throw err;
@@ -60,10 +49,8 @@ io.on('connection', (socket) => { //(socket)=>  等於 function(socket){}
             var req = {
                 'body': res
             };
-
             collection.insert(req);
         });
-
         if (res.recipient in usocket) {
             usocket[res.recipient].emit('receive private message', res);
         }
@@ -84,7 +71,6 @@ io.on('connection', (socket) => { //(socket)=>  等於 function(socket){}
         console.log(user);
         socket.broadcast.emit('user left', socket.username)
     })
-
 });
 
 http.listen(port, function() {

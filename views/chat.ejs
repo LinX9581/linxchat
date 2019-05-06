@@ -141,13 +141,29 @@
     <script src="js/moment.js"></script>
 
     <script>
+        $('#login').click(function(evt) {
+            evt.preventDefault();
+            $.ajax({
+                url: '/login',
+                type: 'POST',
+                data: {
+                    name: $('#name').val(),
+                    password: $('#password').val()
+                },
+                success: function(data) {
+                    if (data.ret_code === 0) {
+                        location.reload();
+                    }
+                }
+            });
+        });
+
         var socket = io();
 
         var name = prompt("請輸入暱稱", "guest"); //若無輸入值，預設為guest
         if (name == "" || name == null) { //防呆
             name = "guest";
         }
-
 
         // 正在連接
         socket.on('connecting', function() {
@@ -262,7 +278,6 @@
         });
 
         function sendMessage(val) {
-
             // 取得時間
             const currentTime = moment().format('A HH:mm');
             $('.chat-active .chat-msg').append('<li><span class="mespeak"><span class="speakTime">' + currentTime + '</span>' + val + '</span></li>');
@@ -293,7 +308,6 @@
             //滾輪置底
             $(".messageBox").scrollTop(scrollDown);
             scrollDown += 200;
-
             //count++;
         });
 
@@ -336,8 +350,8 @@
             $('#chat').append(html);
             tabCount++;
         }
-        // 多對多
 
+        // 多對多
         var htmlAll = '';
         htmlAll += '<div class="chat"><div class="main">';
         htmlAll += '<div class="head"><p>Everyone</p></div><div class="messageBox">';

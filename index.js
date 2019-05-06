@@ -42,14 +42,39 @@ app.get('/', function(req, res) {
     var isLogined = !!loginUser;
     console.log(sess);
     res.render('chat', {
-
+        isLogined: isLogined,
+        name: loginUser || ''
     });
 });
 
-app.get('/ejs', function(req, res) {
-    res.render('index', {
-
+app.get('/logintest', function(req, res) {
+    var sess = req.session;
+    var loginUser = sess.loginUser;
+    var isLogined = !!loginUser;
+    console.log(sess);
+    res.render('logintest', {
+        isLogined: isLogined,
+        name: loginUser || ''
     });
+});
+
+app.post('/login', function(req, res, next) {
+
+    var sess = req.session;
+    var user = findUser(req.body.name, req.body.password);
+    console.log(req.body.name, req.body.password);
+    if (user) {
+        req.session.regenerate(function(err) {
+            if (err) {
+                return res.json({ ret_code: 2, ret_msg: '登录失败' });
+            }
+
+            req.session.loginUser = user.name;
+            res.json({ ret_code: 0, ret_msg: '登录成功' });
+        });
+    } else {
+        res.json({ ret_code: 1, ret_msg: '账号或密码错误' });
+    }
 });
 
 //一對多

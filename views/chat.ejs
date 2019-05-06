@@ -7,8 +7,7 @@
 
     <!-- icon樣式 -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700">
-    <link href="font/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- 基本樣式 -->
     <link href="css/style11.css" rel="stylesheet">
 
@@ -24,306 +23,313 @@
 </head>
 
 <body>
+    <% if(isLogined){ %>
+        <div class="allContainer">
+            <!-- 引導選單 -->
+            <nav id="n">
+                <ul>
+                    <li class="icon" id="group">
+                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="icon" id="friend">
+                        <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="icon" id="search">
+                        <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="icon" id="setting">
+                        <a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="icon" id="message">
+                        <a href="/logout"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </nav>
 
-    <div class="allContainer">
-        <!-- 引導選單 -->
-        <nav id="n">
-            <ul>
-                <li class="icon" id="group">
-                    <a href="#"><i class="fa fa-users" aria-hidden="true"></i></a>
-                </li>
-                <li class="icon" id="message">
-                    <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
-                </li>
-                <li class="icon" id="search">
-                    <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                </li>
-                <li class="icon" id="setting">
-                    <a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
-                </li>
-                <li class="icon" id="friend">
-                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </nav>
+            <!-- 功能選單 -->
 
-        <!-- 功能選單 -->
-
-        <div class="tool" id="groupMenu">
-            <div class="tooldiv">
-                <p class="toolnav"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;建立一個新群族！</p>
-            </div>
-        </div>
-
-        <div class="tool" id="messageMenu">
-            <div class="tooldiv">
-                <p class="toolnav"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp;加入聊天！</p>
-            </div>
-        </div>
-
-        <div class="tool" id="searchMenu">
-            <div class="tooldiv">
-                <p class="toolnav"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;搜尋好友</p>
-                <!-- 彈出視窗 -->
-                <div class="remodal-bg">
-                    <form>
-                        <input type="text" class="searchInput" placeholder="ID搜尋" name="getId" autocomplete="off">
-                        <button id="searchBtn" class="searchBtn" data-remodal-target="modal">搜尋</button>
-                    </form>
+            <div class="tool" id="groupMenu">
+                <div class="tooldiv">
+                    <p class="toolnav"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;和在線所有人聊天！</p>
                 </div>
+            </div>
 
-                <div class="remodal" data-remodal-id="modal">
-                    <p class="addCheck">確定要加入?</p>
+            <div class="tool" id="messageMenu">
+                <div class="tooldiv">
+                    <p class="toolnav"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp;加入聊天！</p>
+                </div>
+            </div>
 
+            <div class="tool" id="searchMenu">
+                <div class="tooldiv">
+                    <p class="toolnav"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;搜尋好友</p>
+                    <!-- 彈出視窗 -->
+                    <div class="remodal-bg">
+                        <form>
+                            <input type="text" class="searchInput" placeholder="ID搜尋" name="getId" autocomplete="off">
+                            <button id="searchBtn" class="searchBtn" data-remodal-target="modal">搜尋</button>
+                        </form>
+                    </div>
+
+                    <div class="remodal" data-remodal-id="modal">
+                        <p class="addCheck">確定要加入?</p>
+
+                        <br>
+                        <a data-remodal-action="close" class="remodal-close"></a>
+                        <a data-remodal-action="cancel" class="remodal-cancel" href="#">取消</a>
+                        <a data-remodal-action="confirm" class="remodal-confirm" id="idConfirm" href="#">加入</a>
+                    </div>
                     <br>
-                    <a data-remodal-action="close" class="remodal-close"></a>
-                    <a data-remodal-action="cancel" class="remodal-cancel" href="#">取消</a>
-                    <a data-remodal-action="confirm" class="remodal-confirm" id="idConfirm" href="#">加入</a>
+                    <br><br>
                 </div>
-                <br>
-                <br><br>
+
             </div>
 
+            <div class="tool" id="settingMenu">
+                <div class="tooldiv">
+                    <p class="toolnav"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;設定個人資料</p>
+                </div>
+                <div class="selectMenu">
+                    <ul>
+                        <li id="msgRecord" class="friendDiv" tabindex="' + tabCount + '"><span class="nick-name">儲存聊天紀錄</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 好友欄 -->
+            <div class="tool" id="friendMenu">
+                <div class="tooldiv" id="myName">
+                    <p class="toolnav"><i class="fa fa-user" aria-hidden="true"></i><span class="test"> &nbsp;趕快新增好友吧！ <span id="userName"><%= name %></span></span>
+                    </p>
+                </div>
+
+                <div class="selectMenu">
+                    <ul id="session">
+
+                    </ul>
+
+
+                    <ul>
+                        <li id="allFriendDiv" class="friendDiv" tabindex="1"><span class="nick-name">Everyone</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 				聊天室窗 				-->
+            <div id="chat"></div>
+
+            <% }else{ %>
+                <form method="POST" action="/login">
+                    <input type="text" id="name" name="name" value="chyingp" />
+                    <input type="password" id="password" name="password" value="123456" />
+                    <input type="submit" value="登录" id="login" />
+                </form>
+                <% } %>
         </div>
 
-        <div class="tool" id="settingMenu">
-            <div class="tooldiv">
-                <p class="toolnav"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;設定個人資料</p>
-            </div>
-            <div class="selectMenu">
-                <ul>
-                    <li id="msgRecord" class="friendDiv" tabindex="' + tabCount + '"><span class="nick-name">儲存聊天紀錄</span></li>
-                </ul>
-            </div>
+        <!-- 收拉選單 -->
+        <div id="mainNavigation">
+            <div class="nav_user" onclick="javascript:fn()"><a href="#"><i class="fa fa-bars"></i></a></div>
         </div>
 
-        <!-- 好友欄 -->
-        <div class="tool" id="friendMenu">
-            <div class="tooldiv" id="myName">
-                <p class="toolnav"><i class="fa fa-user" aria-hidden="true"></i><span class="test"> &nbsp;趕快新增好友吧！</span></p>
-            </div>
+        <!-- socket.io -->
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 
-            <div class="selectMenu">
-                <ul id="session">
+        <!-- jQuery -->
+        <script src="js/jquery-1.11.0.min.js"></script>
 
-                </ul>
+        <!-- 左邊選單目前沒功能 -->
+        <script src="js/menu.js"></script>
+        <script src="js/toolMenu.js"></script>
 
+        <!-- id 加密 -->
+        <script src="js/md5.js"></script>
 
-                <ul>
-                    <li id="allFriendDiv" class="friendDiv" tabindex="1"><span class="nick-name">Everyone</span></li>
-                </ul>
-            </div>
-        </div>
+        <!-- 時間計算 -->
+        <script src="js/moment.js"></script>
 
-        <!-- 				聊天室窗 				-->
-        <div id="chat"></div>
-    </div>
+        <script>
+            $('#login').click(function(evt) {
+                evt.preventDefault();
+                $.ajax({
+                    url: '/login',
+                    type: 'POST',
+                    data: {
+                        name: $('#name').val(),
+                        password: $('#password').val()
+                    },
+                    success: function(data) {
+                        if (data.ret_code === 0) {
+                            location.reload();
+                        }
+                    }
+                });
+            });
 
-    <!-- 收拉選單 -->
-    <div id="mainNavigation">
-        <div class="nav_user" onclick="javascript:fn()"><a href="#"><i class="fa fa-bars"></i></a></div>
-    </div>
+            var socket = io();
 
-    <!-- socket.io -->
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+            const name = "<%= name %>";
 
-    <!-- jQuery -->
-    <script src="js/jquery-1.11.0.min.js"></script>
+            // 正在連接
+            socket.on('connecting', function() {
+                console.log('connecting');
+            });
 
-    <!-- 左邊選單目前沒功能 -->
-    <script src="js/menu.js"></script>
-    <script src="js/toolMenu.js"></script>
+            // 連接上
+            socket.on('connect', function() {
+                console.log('connect');
+                // 请求加入
+                if (name) {
+                    socket.emit('new user', name);
+                    //$('.test').append('<span class="myname"> ' + name + ' </span> '); //加入自己名子
+                    //$('.test').append('<span class="myname"> ' + name + ' </span> '); 
+                }
+            });
 
-    <!-- id 加密 -->
-    <script src="js/md5.js"></script>
-
-    <!-- 時間計算 -->
-    <script src="js/moment.js"></script>
-
-    <script>
-        $('#login').click(function(evt) {
-            evt.preventDefault();
-            $.ajax({
-                url: '/login',
-                type: 'POST',
-                data: {
-                    name: $('#name').val(),
-                    password: $('#password').val()
-                },
-                success: function(data) {
-                    if (data.ret_code === 0) {
-                        location.reload();
+            // 第一次登入 接收其他用戶訊息
+            socket.on('login', function(user) {
+                if (user.length >= 1) {
+                    for (var i = 0; i < user.length; i++) {
+                        incomeHtml(user[i], '');
                     }
                 }
+                console.log(user[i]);
             });
-        });
-
-        var socket = io();
-
-        var name = prompt("請輸入暱稱", "guest"); //若無輸入值，預設為guest
-        if (name == "" || name == null) { //防呆
-            name = "guest";
-        }
-
-        // 正在連接
-        socket.on('connecting', function() {
-            console.log('connecting');
-        });
-
-        // 連接上
-        socket.on('connect', function() {
-            console.log('connect');
-            // 请求加入
-            if (name) {
-                socket.emit('new user', name);
-                $('.test').append('<span class="myname"> ' + name + ' </span> '); //加入自己名子
-            }
-        });
-
-        // 第一次登入 接收其他用戶訊息
-        socket.on('login', function(user) {
-            if (user.length >= 1) {
-                for (var i = 0; i < user.length; i++) {
-                    incomeHtml(user[i], '');
-                }
-            }
-            console.log(user[i]);
-        });
 
 
-        // 監聽中途成員進來
-        socket.on('user joined', function(tname, index) {
-            incomeHtml(tname, 'src/img/head.jpg');
-            console.log(tname + '加入');
-            showNotice('src/img/head.jpg', tname, "上線了");
-        });
+            // 監聽中途成員進來
+            socket.on('user joined', function(tname, index) {
+                incomeHtml(tname, 'src/img/head.jpg');
+                console.log(tname + '加入');
+                showNotice('src/img/head.jpg', tname, "上線了");
+            });
 
-        // 監聽成員離開
-        socket.on('user left', function(data) {
-            console.log(data + '離開');
-            $('#' + hex_md5(data)).remove();
-            $('#li' + hex_md5(data)).remove();
-        });
+            // 監聽成員離開
+            socket.on('user left', function(data) {
+                console.log(data + '離開');
+                $('#' + hex_md5(data)).remove();
+                $('#li' + hex_md5(data)).remove();
+            });
 
-        /*
-        只要點擊好友li 會先移除所有的.active 針對點擊的li加入active屬性
-        之後移除所有的chat-active 再把.chat第index個加入chat-active屬性
-        */
-        $(document).on('click', '#session li', function() {
-            $('.active').removeClass('active');
-            $(this).addClass('active');
-            var index = $(this).index(); //目前點擊的
-            $('.chat-active').removeClass('chat-active');
-            $('.chat:eq(' + (index + 1) + ')').addClass('chat-active');
-            //$('.cue:eq('+index+')').css("display","none");
-        });
-
-
-        //多對多
-        $(document).on('click', '#allFriendDiv', function() {
-            $('.active').removeClass('active');
-            $('#allFriendDiv').addClass('active');
-            var index = $(this).index(); //目前點擊的
-            $('.chat-active').removeClass('chat-active');
-            $('.chat:eq(0)').addClass('chat-active');
-            console.log((index + 1));
-            //$('.cue:eq('+index+')').css("display","none");
-        });
+            /*
+            只要點擊好友li 會先移除所有的.active 針對點擊的li加入active屬性
+            之後移除所有的chat-active 再把.chat第index個加入chat-active屬性
+            */
+            $(document).on('click', '#session li', function() {
+                $('.active').removeClass('active');
+                $(this).addClass('active');
+                var index = $(this).index(); //目前點擊的
+                $('.chat-active').removeClass('chat-active');
+                $('.chat:eq(' + (index + 1) + ')').addClass('chat-active');
+                //$('.cue:eq('+index+')').css("display","none");
+            });
 
 
-        //傳送訊息
-        var scrollDown = 1000;
-        document.onkeydown = function(e) {
-            if (e.keyCode == 13 && !e.shiftKey) {
-                e.preventDefault();
-                if (e && e.keyCode == 13) {
-                    var recipient = $('.chat-active').attr('data-n');
-                    var val = $('.chat-active .input').val();
-                    const currentTime = moment().format('A HH:mm');
+            //多對多
+            $(document).on('click', '#allFriendDiv', function() {
+                $('.active').removeClass('active');
+                $('#allFriendDiv').addClass('active');
+                var index = $(this).index(); //目前點擊的
+                $('.chat-active').removeClass('chat-active');
+                $('.chat:eq(0)').addClass('chat-active');
+                console.log((index + 1));
+                //$('.cue:eq('+index+')').css("display","none");
+            });
 
-                    console.log(val);
-                    if (val == '') return;
-                    sendMessage(val);
-                    //call
-                    var req = {
-                        'addresser': name,
-                        'recipient': recipient,
-                        'type': 'plain',
-                        'body': val,
-                        'time': currentTime
+
+            //傳送訊息
+            var scrollDown = 1000;
+            document.onkeydown = function(e) {
+                if (e.keyCode == 13 && !e.shiftKey) {
+                    e.preventDefault();
+                    if (e && e.keyCode == 13) {
+                        var recipient = $('.chat-active').attr('data-n');
+                        var val = $('.chat-active .input').val();
+                        const currentTime = moment().format('A HH:mm');
+
+                        console.log(val);
+                        if (val == '') return;
+                        sendMessage(val);
+                        //call
+                        var req = {
+                            'addresser': name,
+                            'recipient': recipient,
+                            'type': 'plain',
+                            'body': val,
+                            'time': currentTime
+                        }
+                        socket.emit('send private message', req);
+                        $('.chat-active .input').val('');
+                        //卷軸置底
+                        $(".messageBox").scrollTop(scrollDown);
+                        scrollDown += 200;
+                        console.log(scrollDown);
+
+                        //一對多
+
+                        var valAll = $('.inputAll').val();
+
+                        socket.emit('chat room', name, valAll);
+                        $('.inputAll').val('');
+                        //sendMessageAll(valAll);
                     }
-                    socket.emit('send private message', req);
-                    $('.chat-active .input').val('');
-                    //卷軸置底
-                    $(".messageBox").scrollTop(scrollDown);
-                    scrollDown += 200;
-                    console.log(scrollDown);
-
-                    //一對多
-
-                    var valAll = $('.inputAll').val();
-
-                    socket.emit('chat room', name, valAll);
-                    $('.inputAll').val('');
-                    //sendMessageAll(valAll);
                 }
+
             }
 
-        }
-
-        socket.on('chat room', function(name, valAll) {
-            const currentTime = moment().format('A HH:mm');
-            $('.chat-active .chat-msgAll').append('<li><span class="mespeak"><span class="speakTime">' + currentTime + " " + name + ":" + '</span>' + valAll + '</span></li>');
-            console.log(name, valAll);
-        });
-
-        function sendMessage(val) {
-            // 取得時間
-            const currentTime = moment().format('A HH:mm');
-            $('.chat-active .chat-msg').append('<li><span class="mespeak"><span class="speakTime">' + currentTime + '</span>' + val + '</span></li>');
-        }
-
-        // 接收私聊信息
-        var count = 1;
-        socket.on('receive private message', function(data) {
-            if (data.addresser == data.recipient) return;
-            const currentTime = moment().format('A HH:mm');
-            $('#' + hex_md5(data.addresser) + ' .chat-msg').append('<li><span class="speak">' + data.body + '<span class="speakTime">' + currentTime + '</span></span></li>');
-            console.log(hex_md5(data.addresser));
-
-            //增加訊息提示
-            $('#li' + hex_md5(data.addresser) + ' .nick-name').append('<div class="cue">' + count + '</div>');
-
-            //已讀訊息
-            $('#li' + hex_md5(data.addresser) + ' ').click(function() {
-                $('#li' + hex_md5(data.addresser) + ' .cue').remove(".cue");
+            socket.on('chat room', function(name, valAll) {
+                const currentTime = moment().format('A HH:mm');
+                $('.chat-active .chat-msgAll').append('<li><span class="mespeak"><span class="speakTime">' + currentTime + " " + name + ":" + '</span>' + valAll + '</span></li>');
+                console.log(name, valAll);
             });
 
-            //input focus 才已讀
-            $('#' + hex_md5(data.addresser) + ' .input').focus(function() {
-                $('#li' + hex_md5(data.addresser) + ' .cue').remove(".cue");
+            function sendMessage(val) {
+                // 取得時間
+                const currentTime = moment().format('A HH:mm');
+                $('.chat-active .chat-msg').append('<li><span class="mespeak"><span class="speakTime">' + currentTime + '</span>' + val + '</span></li>');
+            }
+
+            // 接收私聊信息
+            var count = 1;
+            socket.on('receive private message', function(data) {
+                if (data.addresser == data.recipient) return;
+                const currentTime = moment().format('A HH:mm');
+                $('#' + hex_md5(data.addresser) + ' .chat-msg').append('<li><span class="speak">' + data.body + '<span class="speakTime">' + currentTime + '</span></span></li>');
+                console.log(hex_md5(data.addresser));
+
+                //增加訊息提示
+                $('#li' + hex_md5(data.addresser) + ' .nick-name').append('<div class="cue">' + count + '</div>');
+
+                //已讀訊息
+                $('#li' + hex_md5(data.addresser) + ' ').click(function() {
+                    $('#li' + hex_md5(data.addresser) + ' .cue').remove(".cue");
+                });
+
+                //input focus 才已讀
+                $('#' + hex_md5(data.addresser) + ' .input').focus(function() {
+                    $('#li' + hex_md5(data.addresser) + ' .cue').remove(".cue");
+                });
+
+                //console.log(hex_md5(data.addresser));
+                //滾輪置底
+                $(".messageBox").scrollTop(scrollDown);
+                scrollDown += 200;
+                //count++;
             });
 
-            //console.log(hex_md5(data.addresser));
-            //滾輪置底
-            $(".messageBox").scrollTop(scrollDown);
-            scrollDown += 200;
-            //count++;
-        });
 
+            $("#msgRecord").click(function() {
+                console.log("123");
+                var recipient = $('.chat-active').attr('data-n');
+                socket.emit('record listen', name, recipient);
+            });
 
-        $("#msgRecord").click(function() {
-            console.log("123");
-            var recipient = $('.chat-active').attr('data-n');
-            socket.emit('record listen', name, recipient);
-        });
+            // 一對一
+            function incomeHtml(tname, head) {
+                var tabCount = 0;
+                $('#session').append('<li id="li' + hex_md5(tname) + '" class="friendDiv" tabindex="' + tabCount + '"><span class="nick-name">' + tname + '</span></li>');
 
-        // 一對一
-        function incomeHtml(tname, head) {
-            var tabCount = 0;
-            $('#session').append('<li id="li' + hex_md5(tname) + '" class="friendDiv" tabindex="' + tabCount + '"><span class="nick-name">' + tname + '</span></li>');
-
-            var html = '\
+                var html = '\
 				<div id="' + hex_md5(tname) + '" data-n="' + tname + '" class="chat">\
 					<div class="main">\
 						<div class="head"><p>' + tname + '</p></div>\
@@ -347,20 +353,20 @@
 					</div>\
 				</div>\
 			';
-            $('#chat').append(html);
-            tabCount++;
-        }
+                $('#chat').append(html);
+                tabCount++;
+            }
 
-        // 多對多
-        var htmlAll = '';
-        htmlAll += '<div class="chat"><div class="main">';
-        htmlAll += '<div class="head"><p>Everyone</p></div><div class="messageBox">';
-        htmlAll += '<div class="body"><ul class="chat-msgAll"></ul></div></div>';
-        htmlAll += '<div class="chatInput"><div class="box"><div class="head">';
-        htmlAll += '</div><div class="body1"><textarea class="inputAll" ></textarea></div>';
-        htmlAll += '<div class="foot"></div></div></div></div></div>';
-        $('#chat').append(htmlAll);
-    </script>
+            // 多對多
+            var htmlAll = '';
+            htmlAll += '<div class="chat"><div class="main">';
+            htmlAll += '<div class="head"><p>Everyone</p></div><div class="messageBox">';
+            htmlAll += '<div class="body"><ul class="chat-msgAll"></ul></div></div>';
+            htmlAll += '<div class="chatInput"><div class="box"><div class="head">';
+            htmlAll += '</div><div class="body1"><textarea class="inputAll" ></textarea></div>';
+            htmlAll += '<div class="foot"></div></div></div></div></div>';
+            $('#chat').append(htmlAll);
+        </script>
 
 </body>
 

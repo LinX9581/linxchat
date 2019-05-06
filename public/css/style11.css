@@ -1,413 +1,453 @@
 @charset "UTF-8";
+
 /*
 style.css
 */
 
 body {
-  background: url(../img/bg.jpg);
+    background: url(../img/bg.jpg);
+    text-shadow: 0px 0px 2px rgba(30, 30, 30, .30);
+    color: gray;
+    border-style: solid;
+    border-radius: 2px;
+    box-shadow: 0px 0px 8px rgba(66, 66, 66, .69);
+    text-shadow: inset 0px 0px 5px px rgba(66, 66, 66, .75);
 }
 
-#mainNavigation {	/*圖示位置*/
-  /* nav*/
-  text-decoration: none;
-  position: absolute;
-  top: 5px;
-  left: 2px;
-  z-index: 1;
+#mainNavigation {
+    /*圖示位置*/
+    /* nav*/
+    text-decoration: none;
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    z-index: 1;
 }
 
 #mainNavigation i {
-  /*display: inline-block;*/
-  width: 18%;
-  vertical-align: middle;
-  font-size: 1.5em;  /* 圖片大小*/
-/*  line-height: 1;*/
-  color: inherit;
+    /*display: inline-block;*/
+    width: 18%;
+    vertical-align: middle;
+    font-size: 1.5em;
+    /* 圖片大小*/
+    /*  line-height: 1;*/
+    color: inherit;
 }
+
 #mainNavigation a {
-  
-  padding: 0.5em;   /*  *4 區塊長度  */
-  overflow: hidden;
-  color: #888;
-  /*border-left: 0.5em solid #ddd;*/
+    padding: 0.5em;
+    /*  *4 區塊長度  */
+    overflow: hidden;
+    color: #888;
+    /*border-left: 0.5em solid #ddd;*/
 }
 
 #mainNavigation a,
 #mainNavigation a:hover i,
 #mainNavigation a:hover span {
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 #mainNavigation .nav_user a:hover {
-  /* User的顏色 */
-  color: white; /*#717FE7*/
-  border-color: #717FE7;  /* li 框架*/
-  /*background-color: black; /*#F4F5FF*/
+    /* User的顏色 */
+    color: white;
+    /*#717FE7*/
+    border-color: #717FE7;
+    /* li 框架*/
+    /*background-color: black; /*#F4F5FF*/
 }
 
+
 /*--------左邊選單部分--------*/
+
+
 /* 手機
 nav.select_mobile{
 	transform: translateX(-120%);
 }*/
-body,html,.allContainer{
-	margin:0px;
-	position: relative;
-	width: 100%;
-	height: 100%;
-	/* overflow: hidden; */
+
+body,
+html,
+.allContainer {
+    margin: 0px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
 }
 
-.allContainer{
-	min-width: 850px;
-	min-height: 600px;
+.allContainer {
+    min-width: 850px;
+    min-height: 600px;
 }
 
-nav{
-	position: absolute;
-	top: 0;
-	left: 0;
-	transition: transform .5s;
-	/*transform: translateX(-120%);*/
-	background-color: #2d3548;
-	color: gray;
-	display: flex;
-	width: 100px;
-	height: 100%;
-	box-sizing: border-box;
-	font-size: 25pt;
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform .5s;
+    /*transform: translateX(-120%);*/
+    background-color: #2d3548;
+    color: gray;
+    display: flex;
+    width: 100px;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 25pt;
 }
 
 .icon ul {
-	list-style:none;
+    list-style: none;
 }
 
 .icon a {
-	text-decoration: none;
-	-webkit-transition: all 0.4s linear;
-	transition: all 0.4s linear;
-	flex: 1;
-	color: inherit;
-	text-decoration: none;
-	text-align: center;
-	font-size: 18pt;
+    text-decoration: none;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+    flex: 1;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18pt;
 }
 
-.icon a:hover { 
-	color: white; 
-	text-shadow: 0 0 5px white; 
+.icon a:hover {
+    color: white;
+    text-shadow: 0 0 5px white;
 }
 
 
 /*----------------------功能選單--------------*/
 
+
 /* 功能選單位置 */
-.tool{
-	position: absolute;
-	top: 0;
-	left: 100px;
-	background-color: white;
-	width: 300px;
-	height: 100%;
-	box-sizing: border-box;
+
+.tool {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    background-color: white;
+    width: 300px;
+    height: 100%;
+    box-sizing: border-box;
 }
 
- /* 子選單間距 */
-.tooldiv{
-	margin-left: 20px;
-	font-size:18px;
+
+/* 子選單間距 */
+
+.tooldiv {
+    margin-left: 20px;
+    font-size: 18px;
 }
+
 
 /* 功能表單 文字 */
-.toolnav{
-	text-shadow:0px 0px 2px rgba(30,30,30,.30); 
-	color: gray;
-}
 
+.toolnav {
+    text-shadow: 0px 0px 2px rgba(30, 30, 30, .30);
+    color: gray;
+}
 
 
 /*----------------------增加好友div--------------*/
 
-.myname{
-	position: relative;
-	text-shadow:0px 0px 2px rgba(30,30,30,.30); 
-	color: gray;
+.myname {
+    position: relative;
+    text-shadow: 0px 0px 2px rgba(30, 30, 30, .30);
+    color: gray;
 }
 
-.selectMenu{
-	position: relative;
-	height: 91%;
-	font-size:18px;
-	text-shadow:0px 0px 2px rgba(30,30,30,.30); 
-	color: gray;
-	overflow:scroll;
-	overflow-x: hidden; 
+.selectMenu {
+    position: relative;
+    height: 91%;
+    font-size: 18px;
+    text-shadow: 0px 0px 2px rgba(30, 30, 30, .30);
+    color: gray;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
-#addFriendDiv:hover{
-	
+#addFriendDiv:hover {}
+
+#allFriendDiv {}
+
+.friendDiv {
+    background-color: #F8F8FF;
+    margin-left: -20px;
+    width: 260px;
+    height: 60px;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+    z-index: 9999;
+    cursor: pointer;
+    /* border-color:gray; */
 }
 
-#allFriendDiv{
-
+.friendDiv:hover {
+    background-color: #DDDDDD;
 }
 
-.friendDiv{
-	background-color: #F8F8FF;
-	margin-left:-20px;
-	width: 260px;
-	height: 60px;
-	-webkit-transition: all 0.4s linear;
-	transition: all 0.4s linear;
-	z-index:9999;
-	cursor: pointer;
-	/* border-color:gray; */
+.friendDiv:focus {
+    background-color: #E0E0E0;
 }
 
-.friendDiv:hover{
-	background-color:#DDDDDD;
+.friendDiv:visited {
+    background-color: #E0E0E0;
 }
 
-.friendDiv:focus{ 
-	background-color:#E0E0E0;
-} 
-
-.friendDiv:visited{
-	background-color:#E0E0E0;
-}
-
-.nick-name{
-	left: 10px;
+.nick-name {
+    left: 10px;
     position: relative;
     top: 10px;
 }
 
-.cue{
-	position:absolute;
-	top:0px;
-	left:200px;
-	width:5px;
-	color:white;
-	background-color:#00DD00;
-	font-size:10px;
-	border-radius:15px;
-	padding:5px 10px; 
-	text-shadow:0px 0px 2px rgba(30,30,30,.30); 
-	color: gray;
-
+.cue {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    width: 5px;
+    color: white;
+    background-color: #00DD00;
+    font-size: 10px;
+    border-radius: 15px;
+    padding: 5px 10px;
+    text-shadow: 0px 0px 2px rgba(30, 30, 30, .30);
+    color: gray;
 }
+
 
 /*----------------------搜尋好友div--------------*/
 
+
 /* search friend 表單 */
+
 .searchInput {
-	font-size:15px; 
-	padding:5px;
-	border-width:4px;
-	border-radius:8px;
-	border-style:solid;
-	border-color:#cccccc;
-	color:#000000;
-	text-shadow:0px 0px 2px rgba(42,42,42,.44);
-	font-weight:normal; font-style:none;  
-	outline:none;
-	} 
-	
-.searchBtn{
-	font-size:12px; 
-	padding:5px;
-	border-width:4px;
-	border-radius:8px;
-	border-style:solid;
-	border-color:#cccccc;
-	color:#000000;
-	text-shadow:0px 0px 1px rgba(42,42,42,.44);
-	font-weight:normal; font-style:none;  
-	outline:none;
+    font-size: 15px;
+    padding: 5px;
+    border-width: 4px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #cccccc;
+    color: #000000;
+    text-shadow: 0px 0px 2px rgba(42, 42, 42, .44);
+    font-weight: normal;
+    font-style: none;
+    outline: none;
 }
+
+.searchBtn {
+    font-size: 12px;
+    padding: 5px;
+    border-width: 4px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #cccccc;
+    color: #000000;
+    text-shadow: 0px 0px 1px rgba(42, 42, 42, .44);
+    font-weight: normal;
+    font-style: none;
+    outline: none;
+}
+
 
 /*				聊天室窗				*/
-.mobile{
-	width:100%;
-	background-color: #F0F0F0;
+
+.mobile {
+    width: 100%;
+    background-color: #F0F0F0;
 }
 
-#chat{
-	position: absolute;
-	top:0px;
+#chat {
+    position: absolute;
+    top: 0px;
     left: 400px;
-    width: calc(100% - 400px);	/*很重要*/
-	background-color: #F0F0F0;
+    width: calc(100% - 400px);
+    /*很重要*/
+    background-color: #F0F0F0;
     height: 100%;
-	color:#000000;
-	text-shadow:0px 0px 2px rgba(42,42,42,.44);
+    color: #000000;
+    text-shadow: 0px 0px 2px rgba(42, 42, 42, .44);
 }
 
-.chat{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	display: none;
+.chat {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
 }
+
 
 /* 點擊對應的chat  會 addClass('active');  display 從 none -> block */
-.chat-active{
-	display: block;
+
+.chat-active {
+    display: block;
 }
 
-.chatTool{
-	position: absolute;
-	bottom: 20%;
-	left: 400px;
-	background-color: #E0E0E0;
-	width: 78%;
-	height: 5%;
-	box-sizing: border-box;
+.chatTool {
+    position: absolute;
+    bottom: 20%;
+    left: 400px;
+    background-color: #E0E0E0;
+    width: 78%;
+    height: 5%;
+    box-sizing: border-box;
 }
+
+
 /* 				對話視窗 				*/
-.messageBox{
-	position: absolute;
-	top: 0;
-	background-color: #F0F0F0;
-	width: 100%;
-	height: 75%;
-	box-sizing: border-box;
-	text-shadow:0px 0px 2px rgba(30,30,30,.30); 
-	color: gray;
-	overflow:scroll;
-	overflow-x:hidden;
+
+.messageBox {
+    position: absolute;
+    top: 0;
+    background-color: #F0F0F0;
+    width: 100%;
+    height: 75%;
+    box-sizing: border-box;
+    text-shadow: 0px 0px 2px rgba(30, 30, 30, .30);
+    color: gray;
+    overflow: scroll;
+    overflow-x: hidden;
 }
+
 
 /* 對話人 */
-.head{
-	position:absolute;
-	left:50%;
-	z-index:999;
+
+.head {
+    position: absolute;
+    left: 50%;
+    z-index: 999;
 }
+
 
 /* 對話內容 */
-.body{
-	
-}
+
+.body {}
+
 
 /* 工具清單 */
-.toolList{
-	position: absolute;
-	bottom: 20%;
-	background-color: 	#D3D3D3;
-	width: 98%;
-	height: 5%;
-	box-sizing: border-box;
-	overflow: hidden;
+
+.toolList {
+    position: absolute;
+    bottom: 20%;
+    background-color: #D3D3D3;
+    width: 98%;
+    height: 5%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .toolList ul {
-	display:inline;
+    display: inline;
 }
 
 .toolIcon a {
-	text-decoration: none;
-	-webkit-transition: all 0.4s linear;
-	transition: all 0.4s linear;
-	flex: 1;
-	color: gray;
-	text-decoration: none;
-	text-align: center;
-	font-size: 18pt;
-	top:5px;
-	left:15px;
-	position:absolute;
-	display:inline;
+    text-decoration: none;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+    flex: 1;
+    color: gray;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18pt;
+    top: 5px;
+    left: 15px;
+    position: absolute;
+    display: inline;
 }
 
 .toolIcon ul {
-	list-style:none;
+    list-style: none;
 }
 
-.toolIcon a:hover { 
-	color: gray; 
-	text-shadow: 0 0 5px white; 
+.toolIcon a:hover {
+    color: gray;
+    text-shadow: 0 0 5px white;
 }
-	
 
 
 /* 				聊天輸入 			*/
-.chatInput{
-	position: absolute;
-	bottom: 0%;
-	background-color: #DDDDDD;
-	width: 100%;
-	height: 20%;
-	box-sizing: border-box;
-	overflow: hidden;
+
+.chatInput {
+    position: absolute;
+    bottom: 0%;
+    background-color: #DDDDDD;
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
+
 
 /* textarea */
-.input{
-	position:absolute;
-	width:98%;
-	height:98%;
-	font-size: 19px;
-	border-width: 1px;
-	border-color: #CCCCCC;
-	background-color: #FFFFFF;
-	text-shadow:0px 0px 2px rgba(30,30,30,.30); 
-	color: gray;
-	border-style: solid;
-	border-radius: 2px;
-	box-shadow: 0px 0px 8px rgba(66,66,66,.69);
-	text-shadow: inset 0px 0px 5px px rgba(66,66,66,.75);
 
+.input {
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    font-size: 19px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    text-shadow: 0px 0px 2px rgba(30, 30, 30, .30);
+    color: gray;
+    border-style: solid;
+    border-radius: 2px;
+    box-shadow: 0px 0px 8px rgba(66, 66, 66, .69);
+    text-shadow: inset 0px 0px 5px px rgba(66, 66, 66, .75);
 }
 
-.inputAll{
-	position:absolute;
-	width:98%;
-	height:98%;
-	font-size: 19px;
-	border-width: 1px;
-	border-color: #CCCCCC;
-	background-color: #FFFFFF;
-	text-shadow:0px 0px 2px rgba(30,30,30,.30); 
-	color: gray;
-	border-style: solid;
-	border-radius: 2px;
-	box-shadow: 0px 0px 8px rgba(66,66,66,.69);
-	text-shadow: inset 0px 0px 5px px rgba(66,66,66,.75);
-
+.inputAll {
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    font-size: 19px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    text-shadow: 0px 0px 2px rgba(30, 30, 30, .30);
+    color: gray;
+    border-style: solid;
+    border-radius: 2px;
+    box-shadow: 0px 0px 8px rgba(66, 66, 66, .69);
+    text-shadow: inset 0px 0px 5px px rgba(66, 66, 66, .75);
 }
+
+
 /* 聊天輸入框 */
-#m{
-	position:absolute;
-	padding: 5px;
-	font-size: 19px;
-	border-width: 1px;
-	border-color: #CCCCCC;
-	background-color: #FFFFFF;
-	text-shadow:0px 0px 2px rgba(30,30,30,.30); 
-	color: gray;
-	border-style: solid;
-	border-radius: 2px;
-	box-shadow: 0px 0px 8px rgba(66,66,66,.69);
-	text-shadow: inset 0px 0px 5px px rgba(66,66,66,.75);
-	width:95%;
-	height:90%;
+
+#m {
+    position: absolute;
+    padding: 5px;
+    font-size: 19px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    text-shadow: 0px 0px 2px rgba(30, 30, 30, .30);
+    color: gray;
+    border-style: solid;
+    border-radius: 2px;
+    box-shadow: 0px 0px 8px rgba(66, 66, 66, .69);
+    text-shadow: inset 0px 0px 5px px rgba(66, 66, 66, .75);
+    width: 95%;
+    height: 90%;
 }
 
-li{
-	list-style-type: none; 
+li {
+    list-style-type: none;
 }
 
-.body li{
-	overflow:hidden;
-	margin: 7px;
-	padding: 5px;
+.body li {
+    overflow: hidden;
+    margin: 7px;
+    padding: 5px;
 }
+
 
 /* 自己 和 其他人聊天li */
-.speak{
-	background-color: rgb(158,234,106);
+
+.speak {
+    background-color: rgb(158, 234, 106);
     padding: 4px 8px;
     border-radius: 5px;
     display: inline-block;
@@ -419,7 +459,7 @@ li{
     text-overflow: ellipsis;
 }
 
-.speakTime{
+.speakTime {
     padding: 4px 8px;
     border-radius: 5px;
     font-size: 7px;
@@ -427,11 +467,11 @@ li{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
-.mespeak{
-	float: right;
-	background-color: rgb(255, 255, 255);
+
+.mespeak {
+    float: right;
+    background-color: rgb(255, 255, 255);
     border: 1px solid #f5f5f5;
     padding: 4px 8px;
     border-radius: 5px;
@@ -443,11 +483,13 @@ li{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 
 /*              一對多              */
-.mynameAll{
-	float: right;
-	background-color: 	#DDDDDD;
+
+.mynameAll {
+    float: right;
+    background-color: #DDDDDD;
     border: 1px solid #f5f5f5;
     padding: 4px 8px;
     border-radius: 5px;
@@ -460,46 +502,102 @@ li{
     text-overflow: ellipsis;
 }
 
+
 /*----------mobile動畫部分-----------*/
-		
+
 .showin_mobile {
-	transform: translateX(0);
+    transform: translateX(0);
 }
+
 .showout_mobile {
-	transform: translateX(0);
+    transform: translateX(0);
 }
+
+
 /*---------選單出來--------*/
-.showin_mobile li { 
-	transform: translateX(-100px);
-	transition: color .5s; 
-} 
-.showin_mobile li:nth-child(1) { animation: showin_mobile .5s  .2s forwards; }
-.showin_mobile li:nth-child(2) { animation: showin_mobile .5s  .4s forwards; }
-.showin_mobile li:nth-child(3) { animation: showin_mobile .5s  .6s forwards; }
-.showin_mobile li:nth-child(4) { animation: showin_mobile .5s  .8s forwards; }
-.showin_mobile li:nth-child(5) { animation: showin_mobile .5s 1.0s forwards; }
-.showin_mobile li:nth-child(6) { animation: showin_mobile .5s 1.2s forwards; }
+
+.showin_mobile li {
+    transform: translateX(-100px);
+    transition: color .5s;
+}
+
+.showin_mobile li:nth-child(1) {
+    animation: showin_mobile .5s .2s forwards;
+}
+
+.showin_mobile li:nth-child(2) {
+    animation: showin_mobile .5s .4s forwards;
+}
+
+.showin_mobile li:nth-child(3) {
+    animation: showin_mobile .5s .6s forwards;
+}
+
+.showin_mobile li:nth-child(4) {
+    animation: showin_mobile .5s .8s forwards;
+}
+
+.showin_mobile li:nth-child(5) {
+    animation: showin_mobile .5s 1.0s forwards;
+}
+
+.showin_mobile li:nth-child(6) {
+    animation: showin_mobile .5s 1.2s forwards;
+}
 
 @keyframes showin_mobile {
-	0% { transform: translateX(-100px); }
-	100% { transform: translateX(0%); }
+    0% {
+        transform: translateX(-100px);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
-/*---------選單回去--------*/
-.showout_mobile li { 
-	transform: translateX(0%);
-	transition: color .5s; 
-} 
 
-.showout_mobile li:nth-child(6) { animation: showout_mobile .5s  .2s forwards; }
-.showout_mobile li:nth-child(5) { animation: showout_mobile .5s  .4s forwards; }
-.showout_mobile li:nth-child(4) { animation: showout_mobile .5s  .6s forwards; }
-.showout_mobile li:nth-child(3) { animation: showout_mobile .5s  .8s forwards; }
-.showout_mobile li:nth-child(2) { animation: showout_mobile .5s 1.0s forwards; }
-.showout_mobile li:nth-child(1) { animation: showout_mobile .5s 1.2s forwards; }
-.showout_mobile:nth-child(1) { animation: showout_mobile .5s 1.4s forwards; }
+
+/*---------選單回去--------*/
+
+.showout_mobile li {
+    transform: translateX(0%);
+    transition: color .5s;
+}
+
+.showout_mobile li:nth-child(6) {
+    animation: showout_mobile .5s .2s forwards;
+}
+
+.showout_mobile li:nth-child(5) {
+    animation: showout_mobile .5s .4s forwards;
+}
+
+.showout_mobile li:nth-child(4) {
+    animation: showout_mobile .5s .6s forwards;
+}
+
+.showout_mobile li:nth-child(3) {
+    animation: showout_mobile .5s .8s forwards;
+}
+
+.showout_mobile li:nth-child(2) {
+    animation: showout_mobile .5s 1.0s forwards;
+}
+
+.showout_mobile li:nth-child(1) {
+    animation: showout_mobile .5s 1.2s forwards;
+}
+
+.showout_mobile:nth-child(1) {
+    animation: showout_mobile .5s 1.4s forwards;
+}
 
 @keyframes showout_mobile {
-	0% { transform: translateX(0%); }
-	100% { transform: translateX(-100px); }
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100px);
+    }
 }
+
+
 /*----------mobile動畫結束-----------*/

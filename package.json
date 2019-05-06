@@ -9,8 +9,13 @@
   },
   "dependencies": {
     "assert": "^1.4.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.1",
     "express": "^4.15.5",
+    "express-session": "^1.16.1",
     "mongodb": "^2.2.35",
+    "session-file-store": "^1.2.0",
     "socket.io": "^1.7.4"
   },
   "devDependencies": {},

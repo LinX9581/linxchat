@@ -11,13 +11,19 @@
     <!-- 基本樣式 -->
     <link href="css/style11.css" rel="stylesheet">
 
-    <!-- Load local jQuery -->
-    <script src="js/jquery-loader.js"></script>
+    <!-- form style -->
+    <link rel="stylesheet" href="css/form.css">
 
     <!-- Load local lib and tests -->
     <link rel="stylesheet" href="css/remodal.css">
     <link rel="stylesheet" href="css/remodal-default-theme.css">
     <script src="js/remodal.js"></script>
+
+    <!-- bootstrap4 jquery/css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
     <title></title>
 </head>
@@ -114,18 +120,59 @@
             <!-- 				聊天室窗 				-->
             <div id="chat"></div>
 
-            <% }else{ %>
-                <form method="POST" action="/login">
-                    <input type="text" id="name" name="name" value="chyingp" />
-                    <input type="password" id="password" name="password" value="123456" />
-                    <input type="submit" value="登录" id="login" />
-                </form>
-                <% } %>
-        </div>
 
-        <!-- 收拉選單 -->
-        <div id="mainNavigation">
-            <div class="nav_user" onclick="javascript:fn()"><a href="#"><i class="fa fa-bars"></i></a></div>
+            <!-- 收拉選單 -->
+            <div id="mainNavigation">
+                <div class="nav_user" onclick="javascript:fn()"><a href="#"><i class="fa fa-bars"></i></a></div>
+            </div>
+            <% }else{ %>
+
+                <body>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-9 mx-auto">
+                                <div class="card card-signin flex-row my-5">
+                                    <div class="card-img-left d-none d-md-flex">
+                                        <!-- Background image for card set in CSS! -->
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">Register</h5>
+                                        <form class="form-signin" action="login">
+                                            <div class="form-label-group">
+                                                <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+                                                <label for="inputUserame">Username</label>
+                                            </div>
+
+                                            <div class="form-label-group">
+                                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+                                                <label for="inputEmail">Email address</label>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="form-label-group">
+                                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                                <label for="inputPassword">Password</label>
+                                            </div>
+
+                                            <div class="form-label-group">
+                                                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
+                                                <label for="inputConfirmPassword">Confirm password</label>
+                                            </div>
+
+                                            <button class="btn btn-lg btn-primary btn-block text-uppercase signup" type="submit">註冊</button>
+                                            <a class="d-block text-center mt-2 small" href="login.html">已有帳號</a>
+                                            <hr class="my-4">
+                                        </form>
+                                        <button class="btn btn-lg btn-google btn-block text-uppercase googlelogin" type="submit"><i class="fab fa-google mr-2"></i> Google登入</button>
+                                        <button class="btn btn-lg btn-facebook btn-block text-uppercase githublogin" type="submit"><i class="fab fa-github mr-2"></i> Github登入</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% } %>
         </div>
 
         <!-- socket.io -->
@@ -364,6 +411,6 @@
             $('#chat').append(htmlAll);
         </script>
 
-</body>
+        </body>
 
 </html>

@@ -1,131 +1,195 @@
 @charset "UTF-8";
+
 /*
 style.css
 */
 
 body {
-  background: url(img/bg.jpg);
+    background: url(img/bg.jpg);
 }
 
-#mainNavigation {	/*圖示位置*/
-  /* nav*/
-  text-decoration: none;
-  position: absolute;
-  top: 5px;
-  right: 2px;
-  z-index: 1;
+#mainNavigation {
+    /*圖示位置*/
+    /* nav*/
+    text-decoration: none;
+    position: absolute;
+    top: 5px;
+    right: 2px;
+    z-index: 1;
 }
 
 #mainNavigation i {
-  /*display: inline-block;*/
-  width: 18%;
-  vertical-align: middle;
-  font-size: 1.5em;  /* 圖片大小*/
-/*  line-height: 1;*/
-  color: inherit;
+    /*display: inline-block;*/
+    width: 18%;
+    vertical-align: middle;
+    font-size: 1.5em;
+    /* 圖片大小*/
+    /*  line-height: 1;*/
+    color: inherit;
 }
+
 #mainNavigation a {
-  
-  padding: 0.5em;   /*  *4 區塊長度  */
-  overflow: hidden;
-  color: #888;
-  /*border-left: 0.5em solid #ddd;*/
+    padding: 0.5em;
+    /*  *4 區塊長度  */
+    overflow: hidden;
+    color: #888;
+    /*border-left: 0.5em solid #ddd;*/
 }
 
 #mainNavigation a,
 #mainNavigation a:hover i,
 #mainNavigation a:hover span {
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 #mainNavigation .nav_user a:hover {
-  /* User的顏色 */
-  color: white; /*#717FE7*/
-  border-color: #717FE7;  /* li 框架*/
-  /*background-color: black; /*#F4F5FF*/
+    /* User的顏色 */
+    color: white;
+    /*#717FE7*/
+    border-color: #717FE7;
+    /* li 框架*/
+    /*background-color: black; /*#F4F5FF*/
 }
 
+
 /*--------選單部分--------*/
-nav.select_mobile{
-	transform: translateX(-120%);
+
+nav.select_mobile {
+    transform: translateX(-120%);
 }
-nav{
-	position: absolute;
-	top: 0;
-	left: 0;
-	transition: transform .5s;
-	transform: translateX(-120%);
-	background-color: #2d3548;
-	color: gray;
-	display: flex;
-	width: 100px;
-	height: 100%;
-	box-sizing: border-box;
-	font-size: 25pt;	//連結間距
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform .5s;
+    transform: translateX(-120%);
+    background-color: #2d3548;
+    color: gray;
+    display: flex;
+    width: 100px;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 25pt;
 }
 
 #n ul {
-	list-style:none;
+    list-style: none;
 }
 
 #n a {
-	text-decoration: none;
-	-webkit-transition: all 0.4s linear;
-	transition: all 0.4s linear;
-	flex: 1;
-	color: inherit;
-	text-decoration: none;
-	text-align: center;
-	font-size: 18pt;
+    text-decoration: none;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+    flex: 1;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18pt;
 }
 
-#n a:hover { 
-	color: white; 
-	text-shadow: 0 0 5px white; 
+#n a:hover {
+    color: white;
+    text-shadow: 0 0 5px white;
 }
 
 
 /*----------mobile動畫部分-----------*/
-		
+
 .showin_mobile {
-	transform: translateX(0);
+    transform: translateX(0);
 }
+
 .showout_mobile {
-	transform: translateX(0);
+    transform: translateX(0);
 }
+
+
 /*---------選單出來--------*/
-.showin_mobile li { 
-	transform: translateX(-200px);
-	transition: color .5s; 
-} 
-.showin_mobile li:nth-child(1) { animation: showin_mobile .5s  .2s forwards; }
-.showin_mobile li:nth-child(2) { animation: showin_mobile .5s  .4s forwards; }
-.showin_mobile li:nth-child(3) { animation: showin_mobile .5s  .6s forwards; }
-.showin_mobile li:nth-child(4) { animation: showin_mobile .5s  .8s forwards; }
-.showin_mobile li:nth-child(5) { animation: showin_mobile .5s 1.0s forwards; }
-.showin_mobile li:nth-child(6) { animation: showin_mobile .5s 1.2s forwards; }
+
+.showin_mobile li {
+    transform: translateX(-200px);
+    transition: color .5s;
+}
+
+.showin_mobile li:nth-child(1) {
+    animation: showin_mobile .5s .2s forwards;
+}
+
+.showin_mobile li:nth-child(2) {
+    animation: showin_mobile .5s .4s forwards;
+}
+
+.showin_mobile li:nth-child(3) {
+    animation: showin_mobile .5s .6s forwards;
+}
+
+.showin_mobile li:nth-child(4) {
+    animation: showin_mobile .5s .8s forwards;
+}
+
+.showin_mobile li:nth-child(5) {
+    animation: showin_mobile .5s 1.0s forwards;
+}
+
+.showin_mobile li:nth-child(6) {
+    animation: showin_mobile .5s 1.2s forwards;
+}
 
 @keyframes showin_mobile {
-	0% { transform: translateX(-200px); }
-	100% { transform: translateX(0%); }
+    0% {
+        transform: translateX(-200px);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
-/*---------選單回去--------*/
-.showout_mobile li { 
-	transform: translateX(0%);
-	transition: color .5s; 
-} 
 
-.showout_mobile li:nth-child(6) { animation: showout_mobile .5s  .2s forwards; }
-.showout_mobile li:nth-child(5) { animation: showout_mobile .5s  .4s forwards; }
-.showout_mobile li:nth-child(4) { animation: showout_mobile .5s  .6s forwards; }
-.showout_mobile li:nth-child(3) { animation: showout_mobile .5s  .8s forwards; }
-.showout_mobile li:nth-child(2) { animation: showout_mobile .5s 1.0s forwards; }
-.showout_mobile li:nth-child(1) { animation: showout_mobile .5s 1.2s forwards; }
-.showout_mobile:nth-child(1) { animation: showout_mobile .5s 1.4s forwards; }
+
+/*---------選單回去--------*/
+
+.showout_mobile li {
+    transform: translateX(0%);
+    transition: color .5s;
+}
+
+.showout_mobile li:nth-child(6) {
+    animation: showout_mobile .5s .2s forwards;
+}
+
+.showout_mobile li:nth-child(5) {
+    animation: showout_mobile .5s .4s forwards;
+}
+
+.showout_mobile li:nth-child(4) {
+    animation: showout_mobile .5s .6s forwards;
+}
+
+.showout_mobile li:nth-child(3) {
+    animation: showout_mobile .5s .8s forwards;
+}
+
+.showout_mobile li:nth-child(2) {
+    animation: showout_mobile .5s 1.0s forwards;
+}
+
+.showout_mobile li:nth-child(1) {
+    animation: showout_mobile .5s 1.2s forwards;
+}
+
+.showout_mobile:nth-child(1) {
+    animation: showout_mobile .5s 1.4s forwards;
+}
 
 @keyframes showout_mobile {
-	0% { transform: translateX(0%); }
-	100% { transform: translateX(-200%); }
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
 }
+
+
 /*----------mobile動畫結束-----------*/
